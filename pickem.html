@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁 - MySite</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .render-canvas {
+            position: relative;
+            background: #ffffff;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transition: width 0.3s ease;
+        }
+        @media (min-width: 1024px) {
+            .render-canvas { width: 1140px; min-height: 1660px; }
+            #blk_mu79xb75 { left:0px; top:0px; width:1141px; height:64px; z-index:12; }
+#blk_mu802x37 { left:0px; top:60px; width:1141px; height:1595px; z-index:11; }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .render-canvas { width: 768px; min-height: 1000px; }
+            #blk_mu79xb75 { left:0px; top:17px; width:768px; height:64px; z-index:12; }
+#blk_mu802x37 { left:0px; top:270px; width:768px; height:180px; z-index:11; }
+        }
+        @media (max-width: 767px) {
+            .render-canvas { width: 375px; min-height: 1200px; }
+            #blk_mu79xb75 { left:0px; top:17px; width:375px; height:64px; z-index:12; }
+#blk_mu802x37 { left:0px; top:270px; width:375px; height:180px; z-index:11; }
+        }
+        .hover-clickable-element, .interactive-btn {
+            transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
+        .hover-clickable-element:hover, .interactive-btn:hover {
+            transform: scale(1.03) !important;
+            filter: brightness(1.08) drop-shadow(0 4px 12px rgba(79,70,229,0.25)) !important;
+        }
+        .inline-custom-link {
+            transition: color 0.15s ease;
+        }
+        .inline-custom-link:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
+        .matrix-editor-only {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="render-canvas">
+        
+        <div id="blk_mu79xb75" class="exported-canvas-block" style="position:absolute; border-radius:0px; box-sizing:border-box;">
+            <div class="" style="width:100%; height:100%; display:block; box-sizing:border-box;"><nav style="width:100%; height:100%; margin:0; padding:0 30px; background:#000000; display:flex; justify-content:space-between; align-items:center; box-sizing:border-box;"><div style="font-size:20px; font-weight:700; color:#ffffff; cursor:pointer;">連登硬件post</div><div style="display:flex; align-items:center;"><a href="pickem.html" style="color:#ffffff; text-decoration:none; margin-left:20px; font-size:14px; font-weight:500;">點心紙</a><a href="cpu.html" style="color:#ffffff; text-decoration:none; margin-left:20px; font-size:14px; font-weight:500;">CPU</a><a href="mobo.html" style="color:#ffffff; text-decoration:none; margin-left:20px; font-size:14px; font-weight:500;">主板</a><a href="gpu.html" style="color:#ffffff; text-decoration:none; margin-left:20px; font-size:14px; font-weight:500;">GPU</a></div></nav></div>
+        </div>
+        <div id="blk_mu802x37" class="exported-canvas-block" style="position:absolute; border-radius:12px; box-sizing:border-box;">
+            <div class="ask-list-container">
+            <div id="ask-list-capture-area">
+                <div class="al-header-section">
+                    <div class="al-title">問List貼心紙</div>
+                    <div class="al-header-info">
+                        <span> 悠二硬件群 YuNullBell 製作</span>
+                        <span> 連登硬件post / 法奧post 專用</span>
+                    </div>
+                </div>
+
+                <div class="al-legend">
+                    <div class="al-legend-item">LEVEL A: 1080P 顯示器</div>
+                    <div class="al-legend-item">LEVEL B: 2K 顯示器</div>
+                    <div class="al-legend-item">LEVEL C: 2K或4K 顯示器</div>
+                    <div class="al-legend-item">LEVEL D以上: 4K 顯示器</div>
+                </div>
+
+                <div class="al-form-row">
+                    <div class="al-category-title"> Budget 預算</div>
+                    <div class="al-options-container al-single-group">
+                        <div class="al-option-item"><span class="al-opt-letter">A1</span>4K樓下</div>
+                        <div class="al-option-item"><span class="al-opt-letter">A2</span>4000-4999</div>
+                        <div class="al-option-item"><span class="al-opt-letter">A3</span>5000-5999</div>
+                        <div class="al-option-item"><span class="al-opt-letter">A4</span>6000-6999</div>
+                        <div class="al-option-item"><span class="al-opt-letter">B1</span>7000-7999</div>
+                        <div class="al-option-item"><span class="al-opt-letter">B2</span>8000-8999</div>
+                        <div class="al-option-item"><span class="al-opt-letter">C1</span>9000-9999</div>
+                        <div class="al-option-item"><span class="al-opt-letter">C2</span>10K-11K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">D1</span>11K-12K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">D2</span>12K-13K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">E1</span>13K-14K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">E2</span>14K-15K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">F</span>15K-20K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">G</span>20K-30K</div>
+                        <div class="al-option-item"><span class="al-opt-letter">H</span>攻頂免問</div>
+                    </div>
+                </div>
+
+                <div class="al-form-row">
+                    <div class="al-category-title"> CPU </div>
+                    <div class="al-options-container al-single-group" style="flex: 0.5; border-right: 1px solid #334155;">
+                        <div class="al-option-item"><span class="al-opt-letter">A</span>AMD</div>
+                        <div class="al-option-item"><span class="al-opt-letter">B</span>INTEL</div>
+                        <div class="al-option-item"><span class="al-opt-letter">C</span>都 OK</div>
+                    </div>
+                    <div class="al-category-title" style="border-left:none; width:120px;">WIFI？</div>
+                    <div class="al-options-container al-single-group" style="flex: 0.5;">
+                        <div class="al-option-item"><span class="al-opt-letter">A</span>需要 (連藍牙)</div>
+                        <div class="al-option-item"><span class="al-opt-letter">B</span>唔需要</div>
+                    </div>
+                </div>
+
+                <div class="al-form-row">
+                    <div class="al-category-title">核心用途</div>
+                    <div class="al-options-container al-single-group">
+                        <div class="al-option-item"><span class="al-opt-letter">A</span>文書處理</div>
+                        <div class="al-option-item"><span class="al-opt-letter">B</span>打機 (FPS)</div>
+                        <div class="al-option-item"><span class="al-opt-letter">C</span>打機 (Online Game)</div>
+                        <div class="al-option-item"><span class="al-opt-letter">D</span>打機 (3A大作)</div>
+                        <div class="al-option-item"><span class="al-opt-letter">E</span>搵食 (剪片)</div>
+                        <div class="al-option-item"><span class="al-opt-letter">F</span>搵食 (Render)</div>
+                    </div>
+                </div>
+
+                <div style="display:flex; gap:12px;">
+                    <!-- 左側主選項區 -->
+                    <div style="flex:1; display:flex; flex-direction:column;">
+                        <div class="al-form-row">
+                            <div class="al-category-title"> Mon 解像度</div>
+                            <div class="al-options-container al-single-group">
+                                <div class="al-option-item"><span class="al-opt-letter">A</span>1080P <span class="al-highlight">FPS推薦</span></div>
+                                <div class="al-option-item"><span class="al-opt-letter">B</span>2K (1440P) <span class="al-highlight">3A推薦</span></div>
+                                <div class="al-option-item"><span class="al-opt-letter">C</span>4K (2160P) <span class="al-highlight">睇片/3A推薦</span></div>
+                                <div class="al-option-item"><span class="al-opt-letter">D</span>8K 電視嚟</div>
+                                <div class="al-option-item"><span class="al-opt-letter">E</span>OLED (Optional)</div>
+                            </div>
+                        </div>
+
+                        <div class="al-form-row">
+                            <div class="al-category-title">Mon 刷新率</div>
+                            <div class="al-options-container al-single-group">
+                                <div class="al-option-item"><span class="al-opt-letter">A</span>60Hz 文書之選</div>
+                                <div class="al-option-item"><span class="al-opt-letter">B</span>144Hz <span class="al-highlight">3A/睇片推薦</span></div>
+                                <div class="al-option-item"><span class="al-opt-letter">C</span>165-180Hz <span class="al-highlight">3A推薦</span></div>
+                                <div class="al-option-item"><span class="al-opt-letter">D</span>240Hz+ 電競顛佬</div>
+                            </div>
+                        </div>
+
+                        <div class="al-form-row">
+                            <div class="al-category-title">顯示卡陣營</div>
+                            <div class="al-options-container al-single-group">
+                                <div class="al-option-item"><span class="al-opt-letter">A</span>AMD性價比之選</div>
+                                <div class="al-option-item"><span class="al-opt-letter">B</span>INTEL剪片之選</div>
+                                <div class="al-option-item"><span class="al-opt-letter">C</span>NVIDIA全能之選</div>
+                                <div class="al-option-item"><span class="al-opt-letter">D</span>內顯 (文書機預設)</div>
+                            </div>
+                        </div>
+
+                        <div class="al-form-row">
+                            <div class="al-category-title">SSD 容量</div>
+                            <div class="al-options-container al-single-group">
+                                <div class="al-option-item"><span class="al-opt-letter">A</span>1TB 一般</div>
+                                <div class="al-option-item"><span class="al-opt-letter">B</span>2TB 夠用有突</div>
+                                <div class="al-option-item"><span class="al-opt-letter">C</span>4TB 好多</div>
+                                <div class="al-option-item"><span class="al-opt-letter">D</span>4TB以上 搵食</div>
+                                <div style="font-size:11px; color:#64748b; margin-left:10px;">*要HDD麻煩另講</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右側品牌選區 -->
+                    <div class="al-brands-wrapper">
+                        <div class="al-brands-container">
+                            <div class="al-brands-title green">請pick你想用既 N 卡牌子</div>
+                            <div class="al-brands-grid">
+                                <div class="al-brand-item">技嘉 GIGABYTE</div>
+                                <div class="al-brand-item">微星 MSI</div>
+                                <div class="al-brand-item">華碩 ASUS</div>
+                                <div class="al-brand-item">七彩虹 COLORFUL</div>
+                                <div class="al-brand-item">影馳 GALAX</div>
+                                <div class="al-brand-item">必恩威 PNY</div>
+                                <div class="al-brand-item">映眾 INNO3D</div>
+                                <div class="al-brand-item">同德 PALIT</div>
+                                <div class="al-brand-item">索泰 ZOTAC</div>
+                                <div class="al-brand-item">萬麗 Manli</div>
+                                <div class="al-brand-item">麗台 Leadtek</div>
+								<div class="al-brand-item">隨便 </div>
+                            </div>
+                        </div>
+                        <div class="al-brands-container red">
+                            <div class="al-brands-title red">請pick你想用既 A 卡牌子</div>
+                            <div class="al-brands-grid">
+                                <div class="al-brand-item">藍寶石 SAPPHIRE</div>
+                                <div class="al-brand-item">華擎 ASROCK</div>
+                                <div class="al-brand-item">撼訊 POWERCOLOR</div>
+                                <div class="al-brand-item">訊景 XFX</div>
+                                <div class="al-brand-item">技嘉 GIGABYTE</div>
+                                <div class="al-brand-item">華碩 ASUS</div>
+                                <div class="al-brand-item">宏碁 ACER</div>
+								<div class="al-brand-item">隨便 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="al-form-row">
+                    <div class="al-category-title">機箱大細</div>
+                    <div class="al-options-container al-single-group">
+                        <div class="al-option-item"><span class="al-opt-letter">A</span>細機 ITX <span class="al-highlight">(加好多錢)</span></div>
+                        <div class="al-option-item"><span class="al-opt-letter">B</span>中機 M-ATX (正常)</div>
+                        <div class="al-option-item"><span class="al-opt-letter">C</span>大機 ATX <span class="al-highlight">(加少少錢)</span></div>
+                        <div class="al-option-item"><span class="al-opt-letter">D</span>巨無霸 E-ATX <span class="al-highlight">(加好多錢)</span></div>
+                    </div>
+                </div>
+
+                <div class="al-form-row">
+                    <div class="al-category-title">外觀導向</div>
+                    <div class="al-options-container al-single-group">
+                        <div class="al-option-item"><span class="al-opt-letter">A</span>外觀行先 <span class="al-highlight">(水魚)</span></div>
+                        <div class="al-option-item"><span class="al-opt-letter">B</span>性能行先 <span class="al-highlight">(推薦)</span></div>
+                        <div class="al-option-item al-rgb-opt"><span class="al-opt-letter">C</span>要部機識發光</div>
+                        <div class="al-option-item"><span class="al-opt-letter">D</span>白機 (食煙免問)</div>
+                    </div>
+                </div>
+
+                <div class="al-form-row">
+                    <div class="al-category-title">散熱</div>
+                    <div class="al-options-container al-single-group">
+                        <div class="al-option-item"><span class="al-opt-letter">A</span>水冷 <span class="al-highlight">(漏水之選)</span></div>
+                        <div class="al-option-item"><span class="al-opt-letter">B</span>風冷 (用唔壞系列)</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="al-export-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                一鍵導出成品圖
+            </button>
+            <div class="al-disclaimer">點擊後會自動截圖並下載高清 PNG</div>
+        </div>
+        </div>
+    </div>
+    <script id="block-scripts-data" type="application/json">
+        [{"id": "blk_mu802x37", "code": "(function() {\n    // \u6aa2\u67e5\u5bbf\u4e3b\u74b0\u5883\u662f\u5426\u63d0\u4f9b\u4e86 element \u5bb9\u5668\n    if (typeof element === 'undefined' || !element) {\n        console.error(\"\u627e\u4e0d\u5230\u639b\u8f09\u7bc0\u9ede 'element'\");\n        return;\n    }\n\n    try {\n        // \u521d\u59cb\u5316\u5bb9\u5668\u6a23\u5f0f (\u914d\u5408\u6697\u9ed1\u98a8\u683c)\n        element.style.padding = \"0px\";\n        element.style.width = \"100%\";\n        element.style.height = \"100%\";\n        element.style.display = \"flex\";\n        element.style.justifyContent = \"center\";\n        element.style.backgroundColor = \"#0f172a\"; // \u6df1\u8272\u80cc\u666f\n\n        const parentCard = element.closest('.canvas-block');\n        if (parentCard) {\n            parentCard.style.padding = \"0px\";\n            parentCard.style.height = \"auto\";\n        }\n\n        // \u79fb\u9664\u820a\u7684\u5167\u5bb9\u4ee5\u9632\u91cd\u8907\u6e32\u67d3\n        const oldWrapper = element.querySelector('.ask-list-container');\n        if (oldWrapper) oldWrapper.remove();\n\n        // 1. \u52d5\u614b\u8f09\u5165 html2canvas \u5eab (\u7528\u65bc\u622a\u5716\u5c0e\u51fa)\n        function loadHtml2Canvas(callback) {\n            if (window.html2canvas) {\n                callback();\n                return;\n            }\n            const script = document.createElement('script');\n            script.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js';\n            script.onload = callback;\n            document.head.appendChild(script);\n        }\n\n        // 2. \u6ce8\u5165\u5c08\u5c6c CSS \u6a23\u5f0f (\u73fe\u4ee3\u6697\u9ed1\u96fb\u7af6\u98a8)\n        const styleId = 'ask-list-modern-style';\n        if (!document.getElementById(styleId)) {\n            const style = document.createElement('style');\n            style.id = styleId;\n            style.innerHTML = `\n                .ask-list-container {\n                    font-family: \"Microsoft JhengHei\", \"PingFang HK\", -apple-system, sans-serif;\n                    padding: 30px 20px;\n                    display: flex;\n                    flex-direction: column;\n                    align-items: center;\n                    box-sizing: border-box;\n                    width: 100%;\n                }\n                #ask-list-capture-area {\n                    background-color: #1e293b; /* \u622a\u5716\u5340\u4e3b\u80cc\u666f */\n                    color: #f8fafc;\n                    padding: 30px;\n                    width: 100%;\n                    max-width: 1100px;\n                    border-radius: 16px;\n                    box-shadow: 0 10px 25px rgba(0,0,0,0.5);\n                    border: 1px solid #334155;\n                    box-sizing: border-box;\n                }\n                .al-header-section {\n                    border-bottom: 2px solid #334155;\n                    padding-bottom: 15px;\n                    margin-bottom: 20px;\n                }\n                .al-title {\n                    font-size: 26px;\n                    font-weight: 900;\n                    margin-bottom: 8px;\n                    background: linear-gradient(90deg, #3b82f6, #8b5cf6);\n                    -webkit-background-clip: text;\n                    -webkit-text-fill-color: transparent;\n                    display: inline-block;\n                    letter-spacing: 1px;\n                }\n                .al-header-info {\n                    display: flex;\n                    justify-content: space-between;\n                    font-size: 13px;\n                    color: #94a3b8;\n                    font-weight: 500;\n                }\n                .al-legend {\n                    display: flex;\n                    gap: 15px;\n                    margin-bottom: 15px;\n                    background: #0f172a;\n                    padding: 12px 15px;\n                    border-radius: 8px;\n                    border: 1px solid #1e293b;\n                }\n                .al-legend-item {\n                    flex: 1;\n                    font-size: 12px;\n                    color: #cbd5e1;\n                    display: flex;\n                    align-items: center;\n                    gap: 6px;\n                }\n                .al-legend-item::before {\n                    content: \"\";\n                    display: block;\n                    width: 8px;\n                    height: 8px;\n                    border-radius: 50%;\n                }\n                .al-legend-item:nth-child(1)::before { background-color: #3b82f6; }\n                .al-legend-item:nth-child(2)::before { background-color: #10b981; }\n                .al-legend-item:nth-child(3)::before { background-color: #f59e0b; }\n                .al-legend-item:nth-child(4)::before { background-color: #ef4444; }\n\n                .al-form-row {\n                    display: flex;\n                    background-color: #0f172a;\n                    margin-bottom: 12px;\n                    border-radius: 10px;\n                    border: 1px solid #334155;\n                    align-items: stretch;\n                    overflow: hidden;\n                    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);\n                }\n                .al-category-title {\n                    width: 150px;\n                    padding: 15px;\n                    font-weight: 800;\n                    font-size: 14px;\n                    background-color: #1e293b;\n                    color: #e2e8f0;\n                    display: flex;\n                    align-items: center;\n                    flex-shrink: 0;\n                    border-right: 1px solid #334155;\n                    letter-spacing: 0.5px;\n                }\n                .al-options-container {\n                    display: flex;\n                    flex-wrap: wrap;\n                    padding: 10px;\n                    gap: 8px;\n                    flex: 1;\n                    align-items: center;\n                }\n                .al-option-item {\n                    background-color: #1e293b;\n                    border: 1px solid #475569;\n                    padding: 8px 14px;\n                    cursor: pointer;\n                    border-radius: 8px;\n                    font-size: 13px;\n                    color: #cbd5e1;\n                    transition: all 0.2s ease;\n                    display: flex;\n                    align-items: center;\n                    gap: 8px;\n                    user-select: none;\n                }\n                .al-option-item:hover { \n                    background-color: #334155; \n                    border-color: #64748b;\n                }\n                .al-option-item.al-active {\n                    background-color: #2563eb;\n                    border-color: #60a5fa;\n                    color: #ffffff;\n                    font-weight: 700;\n                    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);\n                }\n                .al-opt-letter { \n                    background: rgba(255,255,255,0.1);\n                    padding: 2px 6px;\n                    border-radius: 4px;\n                    font-weight: 800; \n                    font-size: 11px;\n                }\n                .al-active .al-opt-letter {\n                    background: rgba(255,255,255,0.25);\n                }\n                .al-highlight { color: #fca5a5; font-weight: bold; }\n                .al-active .al-highlight { color: #fef08a; } /* \u9078\u4e2d\u6642\u9ad8\u4eae\u5b57\u8b8a\u8272 */\n\n                /* RGB \u9078\u9805\u7279\u5225\u6a23\u5f0f */\n                .al-rgb-opt {\n                    background: linear-gradient(45deg, #1e293b, #1e293b) padding-box,\n                                linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff) border-box;\n                    border: 2px solid transparent !important;\n                }\n                .al-rgb-opt.al-active {\n                    background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff) !important;\n                    color: #fff !important;\n                    text-shadow: 0 1px 2px rgba(0,0,0,0.8);\n                }\n\n                /* \u986f\u793a\u5361\u724c\u5b50\u5c08\u5340\u6a23\u5f0f */\n                .al-brands-wrapper {\n                    display: flex;\n                    flex-direction: column;\n                    gap: 12px;\n                    width: 260px;\n                    flex-shrink: 0;\n                    padding: 10px;\n                    background-color: #0f172a;\n                    border-left: 1px solid #334155;\n                }\n                .al-brands-container {\n                    background-color: #1e293b;\n                    border: 1px solid #334155;\n                    border-radius: 8px;\n                    padding: 10px;\n                }\n                .al-brands-title {\n                    font-size: 12px;\n                    font-weight: 700;\n                    color: #94a3b8;\n                    margin-bottom: 8px;\n                    text-align: center;\n                }\n                .al-brands-title.green { color: #4ade80; }\n                .al-brands-title.red { color: #f87171; }\n\n                .al-brands-grid {\n                    display: grid;\n                    grid-template-columns: 1fr 1fr;\n                    gap: 6px;\n                }\n                .al-brand-item {\n                    font-size: 11px;\n                    cursor: pointer;\n                    padding: 5px 2px;\n                    border-radius: 4px;\n                    background-color: #0f172a;\n                    border: 1px solid #334155;\n                    color: #cbd5e1;\n                    text-align: center;\n                    user-select: none;\n                    transition: all 0.2s;\n                }\n                .al-brand-item:hover { background-color: #334155; }\n                .al-brand-item.al-active {\n                    background-color: #10b981; /* N\u5361\u9810\u8a2d\u9078\u4e2d\u8272 */\n                    border-color: #34d399;\n                    color: white;\n                    font-weight: bold;\n                }\n                .al-brands-container.red .al-brand-item.al-active {\n                    background-color: #ef4444; /* A\u5361\u9810\u8a2d\u9078\u4e2d\u8272 */\n                    border-color: #f87171;\n                }\n\n                .al-export-btn {\n                    margin-top: 25px;\n                    background: linear-gradient(135deg, #3b82f6, #6366f1);\n                    color: white;\n                    border: none;\n                    padding: 14px 30px;\n                    font-size: 16px;\n                    font-weight: 800;\n                    border-radius: 12px;\n                    cursor: pointer;\n                    box-shadow: 0 4px 15px rgba(59,130,246,0.4);\n                    transition: all 0.3s;\n                    display: flex;\n                    align-items: center;\n                    gap: 8px;\n                }\n                .al-export-btn:hover { \n                    transform: translateY(-2px);\n                    box-shadow: 0 6px 20px rgba(59,130,246,0.6);\n                }\n                .al-export-btn:active {\n                    transform: translateY(1px);\n                }\n                .al-disclaimer { margin-top: 12px; font-size: 12px; color: #64748b; }\n            `;\n            document.head.appendChild(style);\n        }\n\n        // 3. \u69cb\u5efa HTML \u7d50\u69cb\n        const container = document.createElement('div');\n        container.className = 'ask-list-container';\n        container.innerHTML = `\n            <div id=\"ask-list-capture-area\">\n                <div class=\"al-header-section\">\n                    <div class=\"al-title\">\u554fList\u8cbc\u5fc3\u7d19</div>\n                    <div class=\"al-header-info\">\n                        <span> \u60a0\u4e8c\u786c\u4ef6\u7fa4 YuNullBell \u88fd\u4f5c</span>\n                        <span> \u9023\u767b\u786c\u4ef6post / \u6cd5\u5967post \u5c08\u7528</span>\n                    </div>\n                </div>\n\n                <div class=\"al-legend\">\n                    <div class=\"al-legend-item\">LEVEL A: 1080P \u986f\u793a\u5668</div>\n                    <div class=\"al-legend-item\">LEVEL B: 2K \u986f\u793a\u5668</div>\n                    <div class=\"al-legend-item\">LEVEL C: 2K\u62164K \u986f\u793a\u5668</div>\n                    <div class=\"al-legend-item\">LEVEL D\u4ee5\u4e0a: 4K \u986f\u793a\u5668</div>\n                </div>\n\n                <div class=\"al-form-row\">\n                    <div class=\"al-category-title\"> Budget \u9810\u7b97</div>\n                    <div class=\"al-options-container al-single-group\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A1</span>4K\u6a13\u4e0b</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A2</span>4000-4999</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A3</span>5000-5999</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A4</span>6000-6999</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B1</span>7000-7999</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B2</span>8000-8999</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">C1</span>9000-9999</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">C2</span>10K-11K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">D1</span>11K-12K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">D2</span>12K-13K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">E1</span>13K-14K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">E2</span>14K-15K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">F</span>15K-20K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">G</span>20K-30K</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">H</span>\u653b\u9802\u514d\u554f</div>\n                    </div>\n                </div>\n\n                <div class=\"al-form-row\">\n                    <div class=\"al-category-title\"> CPU </div>\n                    <div class=\"al-options-container al-single-group\" style=\"flex: 0.5; border-right: 1px solid #334155;\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>AMD</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>INTEL</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>\u90fd OK</div>\n                    </div>\n                    <div class=\"al-category-title\" style=\"border-left:none; width:120px;\">WIFI\uff1f</div>\n                    <div class=\"al-options-container al-single-group\" style=\"flex: 0.5;\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>\u9700\u8981 (\u9023\u85cd\u7259)</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>\u5514\u9700\u8981</div>\n                    </div>\n                </div>\n\n                <div class=\"al-form-row\">\n                    <div class=\"al-category-title\">\u6838\u5fc3\u7528\u9014</div>\n                    <div class=\"al-options-container al-single-group\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>\u6587\u66f8\u8655\u7406</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>\u6253\u6a5f (FPS)</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>\u6253\u6a5f (Online Game)</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>\u6253\u6a5f (3A\u5927\u4f5c)</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">E</span>\u6435\u98df (\u526a\u7247)</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">F</span>\u6435\u98df (Render)</div>\n                    </div>\n                </div>\n\n                <div style=\"display:flex; gap:12px;\">\n                    <!-- \u5de6\u5074\u4e3b\u9078\u9805\u5340 -->\n                    <div style=\"flex:1; display:flex; flex-direction:column;\">\n                        <div class=\"al-form-row\">\n                            <div class=\"al-category-title\"> Mon \u89e3\u50cf\u5ea6</div>\n                            <div class=\"al-options-container al-single-group\">\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>1080P <span class=\"al-highlight\">FPS\u63a8\u85a6</span></div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>2K (1440P) <span class=\"al-highlight\">3A\u63a8\u85a6</span></div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>4K (2160P) <span class=\"al-highlight\">\u7747\u7247/3A\u63a8\u85a6</span></div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>8K \u96fb\u8996\u569f</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">E</span>OLED (Optional)</div>\n                            </div>\n                        </div>\n\n                        <div class=\"al-form-row\">\n                            <div class=\"al-category-title\">Mon \u5237\u65b0\u7387</div>\n                            <div class=\"al-options-container al-single-group\">\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>60Hz \u6587\u66f8\u4e4b\u9078</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>144Hz <span class=\"al-highlight\">3A/\u7747\u7247\u63a8\u85a6</span></div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>165-180Hz <span class=\"al-highlight\">3A\u63a8\u85a6</span></div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>240Hz+ \u96fb\u7af6\u985b\u4f6c</div>\n                            </div>\n                        </div>\n\n                        <div class=\"al-form-row\">\n                            <div class=\"al-category-title\">\u986f\u793a\u5361\u9663\u71df</div>\n                            <div class=\"al-options-container al-single-group\">\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>AMD\u6027\u50f9\u6bd4\u4e4b\u9078</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>INTEL\u526a\u7247\u4e4b\u9078</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>NVIDIA\u5168\u80fd\u4e4b\u9078</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>\u5167\u986f (\u6587\u66f8\u6a5f\u9810\u8a2d)</div>\n                            </div>\n                        </div>\n\n                        <div class=\"al-form-row\">\n                            <div class=\"al-category-title\">SSD \u5bb9\u91cf</div>\n                            <div class=\"al-options-container al-single-group\">\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>1TB \u4e00\u822c</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>2TB \u5920\u7528\u6709\u7a81</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>4TB \u597d\u591a</div>\n                                <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>4TB\u4ee5\u4e0a \u6435\u98df</div>\n                                <div style=\"font-size:11px; color:#64748b; margin-left:10px;\">*\u8981HDD\u9ebb\u7169\u53e6\u8b1b</div>\n                            </div>\n                        </div>\n                    </div>\n\n                    <!-- \u53f3\u5074\u54c1\u724c\u9078\u5340 -->\n                    <div class=\"al-brands-wrapper\">\n                        <div class=\"al-brands-container\">\n                            <div class=\"al-brands-title green\">\u8acbpick\u4f60\u60f3\u7528\u65e2 N \u5361\u724c\u5b50</div>\n                            <div class=\"al-brands-grid\">\n                                <div class=\"al-brand-item\">\u6280\u5609 GIGABYTE</div>\n                                <div class=\"al-brand-item\">\u5fae\u661f MSI</div>\n                                <div class=\"al-brand-item\">\u83ef\u78a9 ASUS</div>\n                                <div class=\"al-brand-item\">\u4e03\u5f69\u8679 COLORFUL</div>\n                                <div class=\"al-brand-item\">\u5f71\u99b3 GALAX</div>\n                                <div class=\"al-brand-item\">\u5fc5\u6069\u5a01 PNY</div>\n                                <div class=\"al-brand-item\">\u6620\u773e INNO3D</div>\n                                <div class=\"al-brand-item\">\u540c\u5fb7 PALIT</div>\n                                <div class=\"al-brand-item\">\u7d22\u6cf0 ZOTAC</div>\n                                <div class=\"al-brand-item\">\u842c\u9e97 Manli</div>\n                                <div class=\"al-brand-item\">\u9e97\u53f0 Leadtek</div>\n\t\t\t\t\t\t\t\t<div class=\"al-brand-item\">\u96a8\u4fbf </div>\n                            </div>\n                        </div>\n                        <div class=\"al-brands-container red\">\n                            <div class=\"al-brands-title red\">\u8acbpick\u4f60\u60f3\u7528\u65e2 A \u5361\u724c\u5b50</div>\n                            <div class=\"al-brands-grid\">\n                                <div class=\"al-brand-item\">\u85cd\u5bf6\u77f3 SAPPHIRE</div>\n                                <div class=\"al-brand-item\">\u83ef\u64ce ASROCK</div>\n                                <div class=\"al-brand-item\">\u64bc\u8a0a POWERCOLOR</div>\n                                <div class=\"al-brand-item\">\u8a0a\u666f XFX</div>\n                                <div class=\"al-brand-item\">\u6280\u5609 GIGABYTE</div>\n                                <div class=\"al-brand-item\">\u83ef\u78a9 ASUS</div>\n                                <div class=\"al-brand-item\">\u5b8f\u7881 ACER</div>\n\t\t\t\t\t\t\t\t<div class=\"al-brand-item\">\u96a8\u4fbf </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"al-form-row\">\n                    <div class=\"al-category-title\">\u6a5f\u7bb1\u5927\u7d30</div>\n                    <div class=\"al-options-container al-single-group\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>\u7d30\u6a5f ITX <span class=\"al-highlight\">(\u52a0\u597d\u591a\u9322)</span></div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>\u4e2d\u6a5f M-ATX (\u6b63\u5e38)</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">C</span>\u5927\u6a5f ATX <span class=\"al-highlight\">(\u52a0\u5c11\u5c11\u9322)</span></div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>\u5de8\u7121\u9738 E-ATX <span class=\"al-highlight\">(\u52a0\u597d\u591a\u9322)</span></div>\n                    </div>\n                </div>\n\n                <div class=\"al-form-row\">\n                    <div class=\"al-category-title\">\u5916\u89c0\u5c0e\u5411</div>\n                    <div class=\"al-options-container al-single-group\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>\u5916\u89c0\u884c\u5148 <span class=\"al-highlight\">(\u6c34\u9b5a)</span></div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>\u6027\u80fd\u884c\u5148 <span class=\"al-highlight\">(\u63a8\u85a6)</span></div>\n                        <div class=\"al-option-item al-rgb-opt\"><span class=\"al-opt-letter\">C</span>\u8981\u90e8\u6a5f\u8b58\u767c\u5149</div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">D</span>\u767d\u6a5f (\u98df\u7159\u514d\u554f)</div>\n                    </div>\n                </div>\n\n                <div class=\"al-form-row\">\n                    <div class=\"al-category-title\">\u6563\u71b1</div>\n                    <div class=\"al-options-container al-single-group\">\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">A</span>\u6c34\u51b7 <span class=\"al-highlight\">(\u6f0f\u6c34\u4e4b\u9078)</span></div>\n                        <div class=\"al-option-item\"><span class=\"al-opt-letter\">B</span>\u98a8\u51b7 (\u7528\u5514\u58de\u7cfb\u5217)</div>\n                    </div>\n                </div>\n\n            </div>\n\n            <button class=\"al-export-btn\">\n                <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path><polyline points=\"7 10 12 15 17 10\"></polyline><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"></line></svg>\n                \u4e00\u9375\u5c0e\u51fa\u6210\u54c1\u5716\n            </button>\n            <div class=\"al-disclaimer\">\u9ede\u64ca\u5f8c\u6703\u81ea\u52d5\u622a\u5716\u4e26\u4e0b\u8f09\u9ad8\u6e05 PNG</div>\n        `;\n\n        element.appendChild(container);\n\n        // 4. \u7d81\u5b9a\u4ea4\u4e92\u4e8b\u4ef6\n        // \u55ae\u9078\u908f\u8f2f\n        const singleGroups = container.querySelectorAll('.al-single-group');\n        singleGroups.forEach(group => {\n            const items = group.querySelectorAll('.al-option-item');\n            items.forEach(item => {\n                item.addEventListener('click', () => {\n                    items.forEach(i => i.classList.remove('al-active'));\n                    item.classList.add('al-active');\n                });\n            });\n        });\n\n        // \u724c\u5b50\u591a\u9078\u908f\u8f2f\n        const brandItems = container.querySelectorAll('.al-brand-item');\n        brandItems.forEach(item => {\n            item.addEventListener('click', () => {\n                if (item.innerText.trim() !== \"\") {\n                    item.classList.toggle('al-active');\n                }\n            });\n        });\n\n        // 5. \u5c0e\u51fa\u5716\u7247\u908f\u8f2f\n        const exportBtn = container.querySelector('.al-export-btn');\n        exportBtn.addEventListener('click', () => {\n            const originalText = exportBtn.innerHTML;\n            exportBtn.innerHTML = '\u5716\u7247\u751f\u6210\u4e2d...';\n            exportBtn.disabled = true;\n\n            loadHtml2Canvas(() => {\n                const captureElement = container.querySelector('#ask-list-capture-area');\n                window.html2canvas(captureElement, {\n                    scale: 2, // \u9ad8\u6e05\u8f38\u51fa\n                    backgroundColor: '#0f172a', // \u914d\u5408\u6697\u9ed1\u4e3b\u984c\u7684\u80cc\u666f\u5e95\u8272\n                    useCORS: true\n                }).then(canvas => {\n                    const link = document.createElement('a');\n                    link.download = 'My-PC-List.png';\n                    link.href = canvas.toDataURL('image/png');\n                    link.click();\n\n                    exportBtn.innerHTML = originalText;\n                    exportBtn.disabled = false;\n                }).catch(err => {\n                    console.error('\u5c0e\u51fa\u5931\u6557:', err);\n                    alert('\u5c0e\u51fa\u5716\u7247\u6642\u767c\u751f\u932f\u8aa4\uff0c\u8acb\u6aa2\u67e5\u700f\u89bd\u5668\u6b0a\u9650\u3002');\n                    exportBtn.innerHTML = originalText;\n                    exportBtn.disabled = false;\n                });\n            });\n        });\n\n    } catch (err) {\n        console.error(\"Ask-List Form Render Error:\", err);\n    }\n})();"}]
+    </script>
+    <script>
+        function executeExportedScripts() {
+            const dataEl = document.getElementById("block-scripts-data");
+            if (!dataEl) return;
+            let registry = [];
+            try { registry = JSON.parse(dataEl.textContent); } catch(e) { return; }
+            registry.forEach(item => {
+                try {
+                    const blockEl = document.getElementById(item.id);
+                    if (blockEl && item.code) {
+                        const targetEl = blockEl.querySelector('.block-inner-content') || blockEl;
+                        const runner = new Function("element", "block", item.code);
+                        runner(targetEl, { id: item.id });
+                    }
+                } catch(err) { console.error("腳本執行異常:", err); }
+            });
+        }
+        window.addEventListener("DOMContentLoaded", executeExportedScripts);
+        window.addEventListener("load", executeExportedScripts);
+    </script>
+</body>
+</html>
